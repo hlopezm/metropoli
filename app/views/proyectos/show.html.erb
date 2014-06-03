@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @proyecto.nombre %>
+</p>
+
+<p>
+  <strong>Clave obra:</strong>
+  <%= @proyecto.clave_obra %>
+</p>
+
+<p>
+  <strong>Num proyecto:</strong>
+  <%= @proyecto.num_proyecto %>
+</p>
+
+<p>
+  <strong>Monto solicitado:</strong>
+  <%= @proyecto.monto_solicitado %>
+</p>
+
+<p>
+  <strong>Monto autorizado:</strong>
+  <%= @proyecto.monto_autorizado %>
+</p>
+
+<p>
+  <strong>Of autorizacion:</strong>
+  <%= @proyecto.of_autorizacion %>
+</p>
+
+<p>
+  <strong>Fecha inicio:</strong>
+  <%= @proyecto.fecha_inicio %>
+</p>
+
+<p>
+  <strong>Fecha fin:</strong>
+  <%= @proyecto.fecha_fin %>
+</p>
+
+<%= link_to 'Edit', edit_proyecto_path(@proyecto) %> |
+<%= link_to 'Back', proyectos_path %>

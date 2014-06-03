@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+  Empleado.create! [
+    {nombre_completo: 'Marinieves Romero'},
+    {nombre_completo: 'Pilar Romero'},
+    {nombre_completo: 'Marlene López'},
+    {nombre_completo: 'Cecy'},
+    {nombre_completo: 'Yanely'},
+    {nombre_completo: 'Juan Luis'},
+    {nombre_completo: 'Sául'},
+    {nombre_completo: 'Hernán'},
+    {nombre_completo: 'Hugo López'},
+  ]
