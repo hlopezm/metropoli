@@ -1,4 +1,4 @@
-<%= form_for(@proyecto) do |f| %>
+<%= nested_form_for(@proyecto) do |f| %>
   <% if @proyecto.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@proyecto.errors.count, "error") %> prohibited this proyecto from being saved:</h2>
@@ -12,37 +12,52 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %><br>
+    <%= f.label :nombre, 'Nombre del Proyecto' %><br>
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= f.label :clave_obra %><br>
+    <%= f.label :clave_obra, 'Clave de obra' %><br>
     <%= f.text_field :clave_obra %>
   </div>
   <div class="field">
-    <%= f.label :num_proyecto %><br>
+    <%= f.label :num_proyecto, 'Numero de Proyecto' %><br>
     <%= f.text_field :num_proyecto %>
   </div>
   <div class="field">
-    <%= f.label :monto_solicitado %><br>
+    <%= f.label :monto_solicitado, 'Monto Solicitado' %><br>
     <%= f.number_field :monto_solicitado %>
   </div>
   <div class="field">
-    <%= f.label :monto_autorizado %><br>
+    <%= f.label :monto_autorizado, 'Monto Autorizado' %><br>
     <%= f.number_field :monto_autorizado %>
   </div>
   <div class="field">
-    <%= f.label :of_autorizacion %><br>
+    <%= f.label :of_autorizacion, 'Oficio de autorización' %><br>
     <%= f.text_field :of_autorizacion %>
   </div>
   <div class="field">
-    <%= f.label :fecha_inicio %><br>
+    <%= f.label :fecha_inicio, 'Fecha de inicio' %><br>
     <%= f.date_select :fecha_inicio %>
   </div>
   <div class="field">
-    <%= f.label :fecha_fin %><br>
+    <%= f.label :fecha_fin, 'Fecha de fin' %><br>
     <%= f.date_select :fecha_fin %>
   </div>
+
+  <fieldset id="tareas">
+     <%= f.fields_for :tareas do |tareas_form| %>
+       <div class="field">
+         <%= tareas_form.label :nombre, 'Nombre de la tarea' %><br>
+         <%= tareas_form.text_field :nombre %>
+       </div>
+       <div class="field">
+         <%= tareas_form.label :prioridad %><br>
+         <%= tareas_form.text_field :prioridad %>
+       </div>
+       <%= tareas_form.link_to_remove "Eliminar esta tarea" %>
+     <% end %>
+       <p> <%= f.link_to_add 'Agregar una tarea', :tareas %></p>
+  </fieldset>
   <div class="actions">
     <%= f.submit %>
   </div>
