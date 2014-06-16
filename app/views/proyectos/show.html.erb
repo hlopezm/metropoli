@@ -40,5 +40,17 @@
   <%= @proyecto.fecha_fin %>
 </p>
 
+<p>
+  <strong> Tareas: </strong>
+  <p>
+    <% @proyecto.tareas.each do |tarea| %>
+      Nombre: <%= tarea.nombre %><br />
+      Prioridad: <%= tarea.prioridad %>
+      Empleados: <%= tarea.empleados.map(&:nombre_completo).to_sentence %>
+      <hr />
+    <% end %>
+  </p>
+</p>
+
 <%= link_to 'Edit', edit_proyecto_path(@proyecto) %> |
 <%= link_to 'Back', proyectos_path %>
